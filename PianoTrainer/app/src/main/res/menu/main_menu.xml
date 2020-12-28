@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Edit Mode"
+        android:id="@+id/editMode"
+        android:onClick="InEditMode"/>
+    <item
+        android:title="Play Mode"
+        android:id="@+id/playMode"
+        android:onClick="InPlayMode"/>
+</menu>

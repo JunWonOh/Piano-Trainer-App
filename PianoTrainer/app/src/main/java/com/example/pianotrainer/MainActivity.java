@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,5 +30,11 @@ public class MainActivity extends AppCompatActivity {
             frameCount = frameCount - 1;
         }
         frameCounter.setText(String.valueOf(frameCount));
+    }
+
+    public void InPlayMode (View view) {
+        Toast.makeText(this, "Entered Play Mode", Toast.LENGTH_SHORT).show();
+        TextView titleView = findViewById(R.id.titleView);
+        titleView.setVisibility(View.VISIBLE);
     }
 }
