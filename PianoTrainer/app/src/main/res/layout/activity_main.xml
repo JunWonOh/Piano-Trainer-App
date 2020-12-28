@@ -14,7 +14,9 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        app:icon="@android:drawable/arrow_up_float" />
+        app:icon="@android:drawable/arrow_up_float"
+        android:onClick="upArrowClick"/>
+
     <Button
         android:id="@+id/downArrow"
         android:layout_width="46dp"
@@ -23,7 +25,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        app:icon="@android:drawable/arrow_down_float" />
+        app:icon="@android:drawable/arrow_down_float"
+        android:onClick="downArrowClick"/>
 
     <TextView
         android:id="@+id/frameCounter"
