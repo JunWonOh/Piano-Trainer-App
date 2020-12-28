@@ -49,17 +49,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <ImageView
             android:id="@+id/keyOne"
             android:layout_width="36dp"
             android:layout_height="171dp"
+            android:layout_marginStart="45dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:srcCompat="@mipmap/one"
-            tools:layout_editor_absoluteX="7dp"
             app:layout_constraintStart_toStartOf="@id/constLayout"
-            android:layout_marginStart="45dp"/>
+            app:srcCompat="@mipmap/one"
+            tools:layout_editor_absoluteX="7dp" />
+
         <ImageView
             android:id="@+id/keyTwo"
             android:layout_width="36dp"
@@ -69,6 +72,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyOne"
             app:srcCompat="@mipmap/two" />
+
         <ImageView
             android:id="@+id/keyThree"
             android:layout_width="36dp"
@@ -77,6 +81,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyTwo"
             app:srcCompat="@mipmap/three" />
+
         <ImageView
             android:id="@+id/keyFour"
             android:layout_width="36dp"
@@ -85,6 +90,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyThree"
             app:srcCompat="@mipmap/one" />
+
         <ImageView
             android:id="@+id/keyFive"
             android:layout_width="36dp"
@@ -93,6 +99,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyFour"
             app:srcCompat="@mipmap/two" />
+
         <ImageView
             android:id="@+id/keySix"
             android:layout_width="36dp"
@@ -101,6 +108,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyFive"
             app:srcCompat="@mipmap/two" />
+
         <ImageView
             android:id="@+id/keySeven"
             android:layout_width="36dp"
@@ -109,6 +117,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keySix"
             app:srcCompat="@mipmap/three" />
+
         <ImageView
             android:id="@+id/keyEight"
             android:layout_width="36dp"
@@ -117,6 +126,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keySeven"
             app:srcCompat="@mipmap/one" />
+
         <ImageView
             android:id="@+id/keyNine"
             android:layout_width="36dp"
@@ -125,6 +135,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyEight"
             app:srcCompat="@mipmap/two" />
+
         <ImageView
             android:id="@+id/keyTen"
             android:layout_width="36dp"
@@ -133,6 +144,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyNine"
             app:srcCompat="@mipmap/three" />
+
         <ImageView
             android:id="@+id/keyEleven"
             android:layout_width="36dp"
@@ -141,6 +153,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyTen"
             app:srcCompat="@mipmap/one" />
+
         <ImageView
             android:id="@+id/keyTwelve"
             android:layout_width="36dp"
@@ -149,6 +162,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyEleven"
             app:srcCompat="@mipmap/two" />
+
         <ImageView
             android:id="@+id/keyThirteen"
             android:layout_width="36dp"
@@ -157,6 +171,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyTwelve"
             app:srcCompat="@mipmap/two" />
+
         <ImageView
             android:id="@+id/keyFourteen"
             android:layout_width="36dp"
@@ -165,6 +180,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyThirteen"
             app:srcCompat="@mipmap/three" />
+
         <ImageView
             android:id="@+id/keyFifteen"
             android:layout_width="36dp"
@@ -173,6 +189,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyFourteen"
             app:srcCompat="@mipmap/one" />
+
         <ImageView
             android:id="@+id/keySixteen"
             android:layout_width="36dp"
@@ -181,6 +198,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyFifteen"
             app:srcCompat="@mipmap/two" />
+
         <ImageView
             android:id="@+id/keySeventeen"
             android:layout_width="36dp"
@@ -192,23 +210,25 @@
 
 
         <Button
+            android:id="@+id/upOne"
             android:layout_width="22dp"
             android:layout_height="120dp"
             android:layout_marginStart="70dp"
             android:layout_marginBottom="58dp"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/upOne"/>
+            app:layout_constraintStart_toStartOf="parent" />
+
         <Button
+            android:id="@+id/upTwo"
             android:layout_width="22dp"
             android:layout_height="120dp"
             android:layout_marginStart="15dp"
             android:layout_marginBottom="58dp"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/upTwo"
             app:layout_constraintStart_toEndOf="@+id/upOne" />
+
         <Button
             android:id="@+id/upThree"
             android:layout_width="22dp"
@@ -218,6 +238,7 @@
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/upTwo" />
+
         <Button
             android:id="@+id/upFour"
             android:layout_width="22dp"
@@ -237,6 +258,7 @@
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/upFour" />
+
         <Button
             android:id="@+id/upSix"
             android:layout_width="22dp"
@@ -246,6 +268,7 @@
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/upFive" />
+
         <Button
             android:id="@+id/upSeven"
             android:layout_width="22dp"
@@ -255,6 +278,7 @@
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/upSix" />
+
         <Button
             android:id="@+id/upEight"
             android:layout_width="22dp"
@@ -264,6 +288,7 @@
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/upSeven" />
+
         <Button
             android:id="@+id/upNine"
             android:layout_width="22dp"
@@ -273,6 +298,7 @@
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/upEight" />
+
         <Button
             android:id="@+id/upTen"
             android:layout_width="22dp"
@@ -282,6 +308,7 @@
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/upNine" />
+
         <Button
             android:id="@+id/upEleven"
             android:layout_width="22dp"
@@ -291,6 +318,7 @@
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/upTen" />
+
         <Button
             android:id="@+id/upTwelve"
             android:layout_width="22dp"
@@ -300,8 +328,9 @@
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/upEleven" />
+
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -312,9 +341,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Now Playing: Untitled Song"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/importButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="IMPORT SONG"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="invisible"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </RelativeLayout>

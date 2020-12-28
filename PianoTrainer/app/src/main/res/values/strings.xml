@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Piano Trainer</string>
+    <string name="edit_mode">Edit Mode</string>
+    <string name="play_mode">Play Mode</string>
 </resources>

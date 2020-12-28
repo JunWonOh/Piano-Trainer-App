@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:title="Edit Mode"
+        android:title="@string/edit_mode"
         android:id="@+id/editMode"
-        android:onClick="InEditMode"/>
+        android:icon="@drawable/ic_launcher_background"/>
+<!--    android:onClick="InEditMode"-->
     <item
-        android:title="Play Mode"
+        android:title="@string/play_mode"
         android:id="@+id/playMode"
-        android:onClick="InPlayMode"/>
+        android:icon="@drawable/ic_launcher_background" />
+<!--        android:onClick="InPlayMode"-->
+
 </menu>
