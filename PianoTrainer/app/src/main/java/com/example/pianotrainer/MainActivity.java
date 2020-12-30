@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,8 +20,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //piano.cNote();
     }
 
+    public void cNote (View view) {
+        ImageView keyOne = (ImageView) findViewById(R.id.keyOne);
+        Integer integer = (Integer) keyOne.getTag();
+        integer = integer == null ? 0 : integer;
+
+        if (integer == R.mipmap.one) {
+            keyOne.setImageResource(R.mipmap.oneclicked);
+            keyOne.setTag(R.mipmap.oneclicked);
+        } else {
+            keyOne.setImageResource(R.mipmap.one);
+            keyOne.setTag(R.mipmap.one);
+        }
+    }
 
     public void upArrowClick (View view) {
         TextView frameCounter = findViewById(R.id.frameCounter);
@@ -36,24 +51,35 @@ public class MainActivity extends AppCompatActivity {
         frameCounter.setText(String.valueOf(frameCount));
     }
 
+    //public void
+
     public void InPlayMode () {
         Toast.makeText(this, "Entered Play Mode", Toast.LENGTH_SHORT).show();
         TextView titleView = findViewById(R.id.titleView);
         TextView editTitle = findViewById(R.id.editTitle);
+        TextView editSpeed = findViewById(R.id.editSpeed);
         Button importButton = findViewById(R.id.importButton);
+        Button playButton = findViewById(R.id.playButton);
         titleView.setVisibility(View.VISIBLE);
         editTitle.setVisibility(View.INVISIBLE);
+        editSpeed.setVisibility(View.VISIBLE);
         importButton.setVisibility(View.VISIBLE);
+        playButton.setVisibility(View.VISIBLE);
+
     }
 
     public void InEditMode () {
         Toast.makeText(this, "Entered Edit Mode", Toast.LENGTH_SHORT).show();
         TextView titleView = findViewById(R.id.titleView);
         TextView editTitle = findViewById(R.id.editTitle);
+        TextView editSpeed = findViewById(R.id.editSpeed);
         Button importButton = findViewById(R.id.importButton);
+        Button playButton = findViewById(R.id.playButton);
         titleView.setVisibility(View.INVISIBLE);
         editTitle.setVisibility(View.VISIBLE);
+        editSpeed.setVisibility(View.INVISIBLE);
         importButton.setVisibility(View.INVISIBLE);
+        playButton.setVisibility(View.INVISIBLE);
     }
 
     //adding this will enable the changes made in main_menu.xml to be visible

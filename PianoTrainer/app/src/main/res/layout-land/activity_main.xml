@@ -61,7 +61,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/constLayout"
             app:srcCompat="@mipmap/one"
-            tools:layout_editor_absoluteX="7dp" />
+            tools:layout_editor_absoluteX="7dp"
+            android:clickable="true"
+            android:onClick="cNote"
+            />
 
         <ImageView
             android:id="@+id/keyTwo"
@@ -364,6 +367,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/playButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Play"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/importButton"
+            android:visibility="invisible"/>
+
+        <EditText
+            android:id="@+id/editSpeed"
+            android:layout_width="129dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Speed:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/playButton"
+            android:inputType="number"
+            android:visibility="invisible"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
