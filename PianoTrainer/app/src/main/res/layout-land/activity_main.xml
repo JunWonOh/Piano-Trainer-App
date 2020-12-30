@@ -62,19 +62,18 @@
             app:layout_constraintStart_toStartOf="@id/constLayout"
             app:srcCompat="@mipmap/one"
             tools:layout_editor_absoluteX="7dp"
-            android:clickable="true"
-            android:onClick="cNote"
-            />
+            android:onClick="_middleC4Note" />
 
         <ImageView
             android:id="@+id/keyTwo"
             android:layout_width="36dp"
             android:layout_height="171dp"
             android:layout_marginStart="1dp"
-            android:backgroundTint="@color/purple_200"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyOne"
-            app:srcCompat="@mipmap/two" />
+            app:srcCompat="@mipmap/two"
+            android:clickable="true"
+            android:onClick="_D4Note" />
 
         <ImageView
             android:id="@+id/keyThree"
@@ -83,7 +82,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyTwo"
-            app:srcCompat="@mipmap/three" />
+            app:srcCompat="@mipmap/three"
+            android:onClick="_E4Note" />
 
         <ImageView
             android:id="@+id/keyFour"
@@ -92,7 +92,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyThree"
-            app:srcCompat="@mipmap/one" />
+            app:srcCompat="@mipmap/one"
+            android:onClick="_F4Note" />
 
         <ImageView
             android:id="@+id/keyFive"
@@ -101,7 +102,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyFour"
-            app:srcCompat="@mipmap/two" />
+            app:srcCompat="@mipmap/two"
+            android:onClick="_G4Note"/>
 
         <ImageView
             android:id="@+id/keySix"
@@ -110,7 +112,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyFive"
-            app:srcCompat="@mipmap/two" />
+            app:srcCompat="@mipmap/two"
+            android:onClick="_A4Note" />
 
         <ImageView
             android:id="@+id/keySeven"
@@ -119,7 +122,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keySix"
-            app:srcCompat="@mipmap/three" />
+            app:srcCompat="@mipmap/three"
+            android:onClick="_B4Note" />
 
         <ImageView
             android:id="@+id/keyEight"
@@ -128,7 +132,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keySeven"
-            app:srcCompat="@mipmap/one" />
+            app:srcCompat="@mipmap/one"
+            android:onClick="_C5Note" />
 
         <ImageView
             android:id="@+id/keyNine"
@@ -137,7 +142,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyEight"
-            app:srcCompat="@mipmap/two" />
+            app:srcCompat="@mipmap/two"
+            android:onClick="_D5Note" />
 
         <ImageView
             android:id="@+id/keyTen"
@@ -146,7 +152,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyNine"
-            app:srcCompat="@mipmap/three" />
+            app:srcCompat="@mipmap/three"
+            android:onClick="_E5Note" />
 
         <ImageView
             android:id="@+id/keyEleven"
@@ -155,7 +162,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyTen"
-            app:srcCompat="@mipmap/one" />
+            app:srcCompat="@mipmap/one"
+            android:onClick="_F5Note" />
 
         <ImageView
             android:id="@+id/keyTwelve"
@@ -164,7 +172,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyEleven"
-            app:srcCompat="@mipmap/two" />
+            app:srcCompat="@mipmap/two"
+            android:onClick="_G5Note" />
 
         <ImageView
             android:id="@+id/keyThirteen"
@@ -173,7 +182,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyTwelve"
-            app:srcCompat="@mipmap/two" />
+            app:srcCompat="@mipmap/two"
+            android:onClick="_A5Note" />
 
         <ImageView
             android:id="@+id/keyFourteen"
@@ -182,7 +192,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyThirteen"
-            app:srcCompat="@mipmap/three" />
+            app:srcCompat="@mipmap/three"
+            android:onClick="_B5Note" />
 
         <ImageView
             android:id="@+id/keyFifteen"
@@ -191,7 +202,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyFourteen"
-            app:srcCompat="@mipmap/one" />
+            app:srcCompat="@mipmap/one"
+            android:onClick="_C6Note" />
 
         <ImageView
             android:id="@+id/keySixteen"
@@ -200,7 +212,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keyFifteen"
-            app:srcCompat="@mipmap/two" />
+            app:srcCompat="@mipmap/two"
+            android:onClick="_D6Note" />
 
         <ImageView
             android:id="@+id/keySeventeen"
@@ -209,7 +222,8 @@
             android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/keySixteen"
-            app:srcCompat="@mipmap/three" />
+            app:srcCompat="@mipmap/three"
+            android:onClick="_E6Note" />
 
 
         <Button
