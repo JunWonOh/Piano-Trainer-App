@@ -1,7 +1,11 @@
 package com.example.pianotrainer;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.ColorStateList;
+import android.graphics.drawable.PaintDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.graphics.drawable.ColorDrawable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -253,6 +258,27 @@ public class MainActivity extends AppCompatActivity {
             key.setImageResource(R.mipmap.three);
             key.setTag(R.mipmap.three);
         }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _CSharp_4 (View view) {
+        Button upOne = (Button) findViewById(R.id.upOne);
+
+//        upOne.setBackgroundColor(Color.YELLOW);
+        PaintDrawable drawable = (PaintDrawable) upOne.getBackground();
+//        int color = drawable.getPaint().getColor();
+//        System.out.println(color);
+
+        int color = ((ColorDrawable) upOne.getBackground()).getColor();
+//        if (upOne.getBackgroundTintList().equals(R.color.teal_700)){
+////            Toast.makeText(this, "hii", Toast.LENGTH_SHORT).show();
+////            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+//        }
+//            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+//        }
+//        else {
+//            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+//        }
     }
 
     public void upArrowClick (View view) {
