@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.drawable.PaintDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -263,23 +264,186 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void _CSharp_4 (View view) {
         Button upOne = (Button) findViewById(R.id.upOne);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
 
-//        upOne.setBackgroundColor(Color.YELLOW);
-        PaintDrawable drawable = (PaintDrawable) upOne.getBackground();
-//        int color = drawable.getPaint().getColor();
-//        System.out.println(color);
-
-        int color = ((ColorDrawable) upOne.getBackground()).getColor();
-//        if (upOne.getBackgroundTintList().equals(R.color.teal_700)){
-////            Toast.makeText(this, "hii", Toast.LENGTH_SHORT).show();
-////            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
-//        }
-//            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
-//        }
-//        else {
-//            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
-//        }
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
     }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _DSharp_4 (View view) {
+        Button upOne = (Button) findViewById(R.id.upTwo);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
+
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _FSharp_4 (View view) {
+        Button upOne = (Button) findViewById(R.id.upThree);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
+
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _GSharp_4 (View view) {
+        Button upOne = (Button) findViewById(R.id.upFour);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
+
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _ASharp_4 (View view) {
+        Button upOne = (Button) findViewById(R.id.upFive);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
+
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _CSharp_5 (View view) {
+        Button upOne = (Button) findViewById(R.id.upSix);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
+
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _DSharp_5 (View view) {
+        Button upOne = (Button) findViewById(R.id.upSeven);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
+
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _FSharp_5 (View view) {
+        Button upOne = (Button) findViewById(R.id.upEight);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
+
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _GSharp_5 (View view) {
+        Button upOne = (Button) findViewById(R.id.upNine);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
+
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _ASharp_5 (View view) {
+        Button upOne = (Button) findViewById(R.id.upTen);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
+
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _CSharp_6 (View view) {
+        Button upOne = (Button) findViewById(R.id.upEleven);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
+
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void _DSharp_6 (View view) {
+        Button upOne = (Button) findViewById(R.id.upTwelve);
+        ColorDrawable drawable = (ColorDrawable) upOne.getBackground();
+        int color = drawable.getColor();
+
+        if (color == getResources().getColor(R.color.teal_700)){
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.yellow)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+        else {
+            upOne.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            upOne.setBackgroundColor(getResources().getColor(R.color.teal_700));
+        }
+    }
+
 
     public void upArrowClick (View view) {
         TextView frameCounter = findViewById(R.id.frameCounter);

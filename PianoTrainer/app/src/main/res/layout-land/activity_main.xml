@@ -229,10 +229,11 @@
         <Button
             android:id="@+id/upOne"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="70dp"
             android:layout_marginBottom="58dp"
             android:background="@color/teal_700"
+            android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:onClick="_CSharp_4" />
@@ -240,112 +241,134 @@
         <Button
             android:id="@+id/upTwo"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="15dp"
             android:layout_marginBottom="58dp"
+            android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/upOne" />
+            app:layout_constraintStart_toEndOf="@+id/upOne"
+            android:onClick="_DSharp_4"/>
 
         <Button
             android:id="@+id/upThree"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="54dp"
             android:layout_marginBottom="58dp"
+            android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/upTwo" />
+            app:layout_constraintStart_toEndOf="@+id/upTwo"
+            android:onClick="_FSharp_4"/>
 
         <Button
             android:id="@+id/upFour"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="14dp"
             android:layout_marginBottom="58dp"
+            android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/upThree" />
+            app:layout_constraintStart_toEndOf="@+id/upThree"
+            android:onClick="_GSharp_4"/>
 
         <Button
             android:id="@+id/upFive"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="15dp"
             android:layout_marginBottom="58dp"
+            android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/upFour" />
+            app:layout_constraintStart_toEndOf="@+id/upFour"
+            android:onClick="_ASharp_4"/>
 
         <Button
             android:id="@+id/upSix"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="53dp"
             android:layout_marginBottom="58dp"
+            android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/upFive" />
+            app:layout_constraintStart_toEndOf="@+id/upFive"
+            android:onClick="_CSharp_5" />
 
         <Button
             android:id="@+id/upSeven"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="15dp"
             android:layout_marginBottom="58dp"
+            android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/upSix" />
+            app:layout_constraintStart_toEndOf="@+id/upSix"
+            android:onClick="_DSharp_5"/>
 
         <Button
             android:id="@+id/upEight"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="53dp"
             android:layout_marginBottom="58dp"
+            android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/upSeven" />
+            app:layout_constraintStart_toEndOf="@+id/upSeven"
+            android:onClick="_FSharp_5" />
 
         <Button
             android:id="@+id/upNine"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="15dp"
             android:layout_marginBottom="58dp"
+            android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/upEight" />
+            app:layout_constraintStart_toEndOf="@+id/upEight"
+            android:onClick="_GSharp_5" />
 
         <Button
             android:id="@+id/upTen"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="15dp"
             android:layout_marginBottom="58dp"
+            android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/upNine" />
+            app:layout_constraintStart_toEndOf="@+id/upNine"
+            android:onClick="_ASharp_5" />
 
         <Button
             android:id="@+id/upEleven"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="53dp"
             android:layout_marginBottom="58dp"
+            android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/upTen" />
+            app:layout_constraintStart_toEndOf="@+id/upTen"
+            android:onClick="_CSharp_6" />
 
         <Button
             android:id="@+id/upTwelve"
             android:layout_width="22dp"
-            android:layout_height="120dp"
+            android:layout_height="113dp"
             android:layout_marginStart="15dp"
             android:layout_marginBottom="58dp"
+            android:background="@color/teal_700"
             android:backgroundTint="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/upEleven" />
+            app:layout_constraintStart_toEndOf="@+id/upEleven"
+            android:onClick="_DSharp_6" />
 
         <EditText
             android:id="@+id/editTitle"
