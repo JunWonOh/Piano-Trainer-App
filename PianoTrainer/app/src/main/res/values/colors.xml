@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFFF00</color>
     <color name="opal">#B2BFC2</color>
+    <color name="light_blue">#A4F2FB</color>
+    <color name="sunset">#FFC107</color>
 </resources>
