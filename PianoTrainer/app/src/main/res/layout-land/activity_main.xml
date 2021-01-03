@@ -16,7 +16,6 @@
         android:layout_marginEnd="20dp"
         app:icon="@android:drawable/arrow_up_float"
         android:onClick="upArrowClick"/>
-
     <Button
         android:id="@+id/downArrow"
         android:layout_width="46dp"
@@ -27,7 +26,6 @@
         android:layout_marginRight="20dp"
         app:icon="@android:drawable/arrow_down_float"
         android:onClick="downArrowClick"/>
-
     <TextView
         android:id="@+id/frameCounter"
         android:layout_width="wrap_content"
@@ -37,14 +35,6 @@
         android:layout_marginEnd="20dp"
         android:text="1"
         android:textSize="30sp" />
-
-<!--    <ImageView-->
-<!--        android:id="@+id/keyboardTemplate"-->
-<!--        android:layout_width="716dp"-->
-<!--        android:layout_height="170dp"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_alignParentBTop="true"-->
-<!--        app:srcCompat="@mipmap/template_new" />-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constLayout"
@@ -375,7 +365,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
         <EditText
             android:id="@+id/editTitle"
             android:layout_width="wrap_content"
@@ -387,7 +376,25 @@
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
+        <ImageView
+            android:id="@+id/pianoLines"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/staff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleView"
+            android:visibility="invisible"/>
+        <Button
+            android:id="@+id/confirm_title_button"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:onClick="ConfirmTitle"
+            android:text="ok"
+            app:layout_constraintStart_toEndOf="@+id/editTitle"
+            app:layout_constraintTop_toTopOf="@+id/editTitle" />
         <TextView
             android:id="@+id/titleView"
             android:layout_width="wrap_content"
@@ -400,7 +407,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <Button
             android:id="@+id/importButton"
             android:layout_width="wrap_content"
@@ -411,7 +417,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:visibility="invisible"/>
-
         <Button
             android:id="@+id/playButton"
             android:layout_width="wrap_content"
@@ -423,18 +428,26 @@
             app:layout_constraintTop_toBottomOf="@+id/importButton"
             android:visibility="invisible"/>
 
-        <EditText
-            android:id="@+id/editSpeed"
-            android:layout_width="129dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="Speed:"
-            app:layout_constraintStart_toStartOf="parent"
+        <TextView
+            android:id="@+id/speedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Speed:"
+            app:layout_constraintStart_toStartOf="@+id/playButton"
             app:layout_constraintTop_toBottomOf="@+id/playButton"
-            android:inputType="number"
             android:visibility="invisible"/>
+
+        <Spinner
+            android:id="@+id/editSpeed"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/light_blue"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/speedText"
+            app:layout_constraintTop_toBottomOf="@+id/playButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

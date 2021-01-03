@@ -13,28 +13,67 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.drawable.ColorDrawable;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private int frameCount = 1;
+    private Spinner editSpeed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        editSpeed = findViewById(R.id.editSpeed);
 
-//        EditText editTitle = findViewById(R.id.editTitle);
-//        TextView titleView = findViewById(R.id.titleView);
-//        titleView.setText("Now Playing: " + editTitle.getText().toString());
+        ArrayList<Double> speedOptions = new ArrayList<>();
+        speedOptions.add(0.25);
+        speedOptions.add(0.50);
+        speedOptions.add(0.75);
+        speedOptions.add(1.00);
+        speedOptions.add(1.25);
+        speedOptions.add(1.50);
+        speedOptions.add(1.75);
+        speedOptions.add(2.00);
+        ArrayAdapter<Double> speedAdapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_dropdown_item,
+                speedOptions
+        );
+
+        editSpeed.setAdapter(speedAdapter);
+        editSpeed.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                double speed = speedOptions.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
-    //TODO: Images need to "wake up" before being pressed
+    public void ConfirmTitle(View view){
+        EditText editTitle = findViewById(R.id.editTitle);
+        TextView titleView = findViewById(R.id.titleView);
+        titleView.setText("Now Playing: " + editTitle.getText().toString());
+    }
+    
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void _whiteKey (View view) {
         Button key = (Button) findViewById(view.getId());
@@ -81,33 +120,42 @@ public class MainActivity extends AppCompatActivity {
         frameCounter.setText(String.valueOf(frameCount));
     }
 
-    //public void
-
     public void InPlayMode () {
         Toast.makeText(this, "Entered Play Mode", Toast.LENGTH_SHORT).show();
+        ImageView pianoLines = findViewById(R.id.pianoLines);
         TextView titleView = findViewById(R.id.titleView);
         TextView editTitle = findViewById(R.id.editTitle);
-        TextView editSpeed = findViewById(R.id.editSpeed);
+        Spinner editSpeed = (Spinner) findViewById(R.id.editSpeed);
+        TextView speedText = findViewById(R.id.speedText);
+        Button confirm_title_button = findViewById(R.id.confirm_title_button);
         Button importButton = findViewById(R.id.importButton);
         Button playButton = findViewById(R.id.playButton);
+        pianoLines.setVisibility(View.VISIBLE);
         titleView.setVisibility(View.VISIBLE);
         editTitle.setVisibility(View.INVISIBLE);
         editSpeed.setVisibility(View.VISIBLE);
+        speedText.setVisibility(View.VISIBLE);
+        confirm_title_button.setVisibility(View.INVISIBLE);
         importButton.setVisibility(View.VISIBLE);
         playButton.setVisibility(View.VISIBLE);
-
     }
 
     public void InEditMode () {
         Toast.makeText(this, "Entered Edit Mode", Toast.LENGTH_SHORT).show();
+        ImageView pianoLines = findViewById(R.id.pianoLines);
         TextView titleView = findViewById(R.id.titleView);
         TextView editTitle = findViewById(R.id.editTitle);
-        TextView editSpeed = findViewById(R.id.editSpeed);
+        Spinner editSpeed = (Spinner) findViewById(R.id.editSpeed);
+        TextView speedText = findViewById(R.id.speedText);
+        Button confirm_title_button = findViewById(R.id.confirm_title_button);
         Button importButton = findViewById(R.id.importButton);
         Button playButton = findViewById(R.id.playButton);
+        pianoLines.setVisibility(View.INVISIBLE);
         titleView.setVisibility(View.INVISIBLE);
         editTitle.setVisibility(View.VISIBLE);
         editSpeed.setVisibility(View.INVISIBLE);
+        speedText.setVisibility(View.INVISIBLE);
+        confirm_title_button.setVisibility(View.VISIBLE);
         importButton.setVisibility(View.INVISIBLE);
         playButton.setVisibility(View.INVISIBLE);
     }
