@@ -195,7 +195,6 @@
                 app:backgroundTint="#A4F2FB"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@id/const2Layout" />
-
             <Button
                 android:id="@+id/D4"
                 android:layout_width="35dp"
@@ -380,12 +379,22 @@
             android:id="@+id/pianoLines"
             android:layout_width="250dp"
             android:layout_height="100dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:src="@mipmap/staff"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleView"
             android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="save song"
+            app:layout_constraintStart_toStartOf="@+id/editTitle"
+            app:layout_constraintTop_toBottomOf="@+id/editTitle"
+            android:layout_marginTop="10dp"/>
+
         <Button
             android:id="@+id/confirm_title_button"
             android:layout_width="60dp"
