@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
     private int frameCount = 1;
     private Spinner editSpeed;
-    private ArrayList<Integer> zero = new ArrayList<>(Collections.nCopies(1, 0));
-    private ArrayList<ArrayList<Integer>> frame = new ArrayList<ArrayList<Integer>>(Collections.nCopies(1000, zero));
+    //private ArrayList<Integer> zero = new ArrayList<>(Collections.nCopies(1, 0));
+    private ArrayList<ArrayList<Integer>> frame = new ArrayList<ArrayList<Integer>>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -206,6 +206,8 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void upArrowClick (View view) {
         ArrayList<Integer> keyCombinations = new ArrayList<>();
+        keyCombinations.add(0);
+        frame.add(keyCombinations);
         ViewGroup blackKeyLayout = (ViewGroup)findViewById(R.id.constLayout);
         for (int i = 0; i < blackKeyLayout.getChildCount(); i++){
             View key = blackKeyLayout.getChildAt(i);
@@ -314,87 +316,87 @@ public class MainActivity extends AppCompatActivity {
                 color = drawable.getColor();
                 switch(key.getId()){
                     case R.id.middleC4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(13);
                         }
                         break;
                     case R.id.D4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(14);
                         }
                         break;
                     case R.id.E4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(15);
                         }
                         break;
                     case R.id.F4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(16);
                         }
                         break;
                     case R.id.G4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(17);
                         }
                         break;
                     case R.id.A4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(18);
                         }
                         break;
                     case R.id.B4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(19);
                         }
                         break;
                     case R.id.C5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(20);
                         }
                         break;
                     case R.id.D5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(21);
                         }
                         break;
                     case R.id.E5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(22);
                         }
                         break;
                     case R.id.F5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(23);
                         }
                         break;
                     case R.id.G5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(24);
                         }
                         break;
                     case R.id.A5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(25);
                         }
                         break;
                     case R.id.B5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(26);
                         }
                         break;
                     case R.id.C6:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(27);
                         }
                         break;
                     case R.id.D6:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(28);
                         }
                         break;
                     case R.id.E6:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(29);
                         }
                         break;
@@ -402,14 +404,16 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         //frame.add(keyCombinations);
-        frame.set(frameCount, keyCombinations);
+        frame.set(frameCount-1, keyCombinations);
+        frame.set(0, keyCombinations);
         TextView frameCounter = findViewById(R.id.frameCounter);
         frameCount = frameCount + 1;
         frameCounter.setText(String.valueOf(frameCount));
         Button key;
         ClearPiano();
-        for (int i = 0; i < frame.get(frameCount).size(); i++) {
-            switch(frame.get(frameCount).get(i)) {
+        if (frame.size() > frameCount){
+            for (int i = 0; i < frame.get(frameCount-1).size(); i++) {
+                switch (frame.get(frameCount - 1).get(i)) {
                 case 1:
                     key = findViewById(R.id.upOne);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
@@ -557,12 +561,15 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void downArrowClick (View view) {
         ArrayList<Integer> keyCombinations = new ArrayList<>();
         ViewGroup blackKeyLayout = (ViewGroup)findViewById(R.id.constLayout);
+        keyCombinations.add(0);
+        frame.add(keyCombinations);
         for (int i = 0; i < blackKeyLayout.getChildCount(); i++){
             View key = blackKeyLayout.getChildAt(i);
             int color = 0;
@@ -670,87 +677,87 @@ public class MainActivity extends AppCompatActivity {
                 color = drawable.getColor();
                 switch(key.getId()){
                     case R.id.middleC4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(13);
                         }
                         break;
                     case R.id.D4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(14);
                         }
                         break;
                     case R.id.E4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(15);
                         }
                         break;
                     case R.id.F4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(16);
                         }
                         break;
                     case R.id.G4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(17);
                         }
                         break;
                     case R.id.A4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(18);
                         }
                         break;
                     case R.id.B4:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(19);
                         }
                         break;
                     case R.id.C5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(20);
                         }
                         break;
                     case R.id.D5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(21);
                         }
                         break;
                     case R.id.E5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(22);
                         }
                         break;
                     case R.id.F5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(23);
                         }
                         break;
                     case R.id.G5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(24);
                         }
                         break;
                     case R.id.A5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(25);
                         }
                         break;
                     case R.id.B5:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(26);
                         }
                         break;
                     case R.id.C6:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(27);
                         }
                         break;
                     case R.id.D6:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(28);
                         }
                         break;
                     case R.id.E6:
-                        if (color == getResources().getColor(R.color.dark_purple)) {
+                        if (color == getResources().getColor(R.color.light_purple)) {
                             keyCombinations.add(29);
                         }
                         break;
@@ -758,7 +765,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         //frame.add(keyCombinations);
-        frame.set(frameCount, keyCombinations);
+        frame.set(frameCount-1, keyCombinations);
         TextView frameCounter = findViewById(R.id.frameCounter);
         if (frameCount > 1) {
             frameCount = frameCount - 1;
@@ -766,8 +773,8 @@ public class MainActivity extends AppCompatActivity {
         frameCounter.setText(String.valueOf(frameCount));
         Button key;
         ClearPiano();
-        for (int i = 0; i < frame.get(frameCount).size(); i++) {
-            switch (frame.get(frameCount).get(i)) {
+        for (int i = 0; i < frame.get(frameCount-1).size(); i++) {
+            switch (frame.get(frameCount-1).get(i)) {
                 case 1:
                     key = findViewById(R.id.upOne);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
