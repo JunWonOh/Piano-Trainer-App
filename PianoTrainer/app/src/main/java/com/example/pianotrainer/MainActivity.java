@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.PaintDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
     private int frameCount = 1;
     private Spinner editSpeed;
-    //private ArrayList<Integer> zero = new ArrayList<>(Collections.nCopies(1, 0));
     private ArrayList<ArrayList<Integer>> frame = new ArrayList<ArrayList<Integer>>();
 
     @Override
@@ -205,9 +205,15 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void upArrowClick (View view) {
+        String test = "| ";
+        //keyCombination contains combinations of the integer value of keys
         ArrayList<Integer> keyCombinations = new ArrayList<>();
         keyCombinations.add(0);
         frame.add(keyCombinations);
+        /**Iterate through every black key to see if any of them are toggled purple.
+         * Each black key has its own respective number.
+         * If toggled, add that to the keyCombinations arrayList
+         */
         ViewGroup blackKeyLayout = (ViewGroup)findViewById(R.id.constLayout);
         for (int i = 0; i < blackKeyLayout.getChildCount(); i++){
             View key = blackKeyLayout.getChildAt(i);
@@ -305,6 +311,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+        /**Iterate through every white key to see if any of them are toggled purple.
+         * Each white key has its own respective number.
+         * If toggled, add that to the keyCombinations arrayList
+         */
         ViewGroup whiteKeyLayout = (ViewGroup)findViewById(R.id.const2Layout);
         for (int i = 0; i < whiteKeyLayout.getChildCount(); i++){
             View key = whiteKeyLayout.getChildAt(i);
@@ -403,173 +413,37 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        //frame.add(keyCombinations);
+        //---------------------------------------------------------------------------------------------
+        for (int i = 0; i < frame.size(); i++){
+            for (int j = 0; j < frame.get(i).size(); j++){
+               test = test + Integer.toString(frame.get(i).get(j)) + " ";
+            }
+            test = test + " | ";
+        }
+        Toast.makeText(this, test, Toast.LENGTH_SHORT).show();
+        //---------------------------------------------------------------------------------------------
+        //Toast.makeText(this, "written to element: " + Integer.toString(frameCount-1), Toast.LENGTH_SHORT).show();
         frame.set(frameCount-1, keyCombinations);
-        frame.set(0, keyCombinations);
+        //When button is clicked, increment frameCount. Set frameCounter to the new value.
         TextView frameCounter = findViewById(R.id.frameCounter);
         frameCount = frameCount + 1;
         frameCounter.setText(String.valueOf(frameCount));
-        Button key;
+        //Turn every key blue instead of purple to "clear the piano"
         ClearPiano();
+        //Toast.makeText(this, "retrieving from element: " + Integer.toString(frameCount-1), Toast.LENGTH_SHORT).show();
         if (frame.size() > frameCount){
-            for (int i = 0; i < frame.get(frameCount-1).size(); i++) {
-                switch (frame.get(frameCount - 1).get(i)) {
-                case 1:
-                    key = findViewById(R.id.upOne);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 2:
-                    key = findViewById(R.id.upTwo);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 3:
-                    key = findViewById(R.id.upThree);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 4:
-                    key = findViewById(R.id.upFour);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 5:
-                    key = findViewById(R.id.upFive);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 6:
-                    key = findViewById(R.id.upSix);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 7:
-                    key = findViewById(R.id.upSeven);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 8:
-                    key = findViewById(R.id.upEight);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 9:
-                    key = findViewById(R.id.upNine);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 10:
-                    key = findViewById(R.id.upTen);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 11:
-                    key = findViewById(R.id.upEleven);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 12:
-                    key = findViewById(R.id.upTwelve);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
-                    break;
-                case 13:
-                    key = findViewById(R.id.middleC4);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 14:
-                    key = findViewById(R.id.D4);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 15:
-                    key = findViewById(R.id.E4);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 16:
-                    key = findViewById(R.id.F4);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 17:
-                    key = findViewById(R.id.G4);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 18:
-                    key = findViewById(R.id.A4);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 19:
-                    key = findViewById(R.id.B4);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 20:
-                    key = findViewById(R.id.C5);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 21:
-                    key = findViewById(R.id.D5);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 22:
-                    key = findViewById(R.id.E5);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 23:
-                    key = findViewById(R.id.F5);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 24:
-                    key = findViewById(R.id.G5);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 25:
-                    key = findViewById(R.id.A5);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 26:
-                    key = findViewById(R.id.B5);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 27:
-                    key = findViewById(R.id.C6);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 28:
-                    key = findViewById(R.id.D6);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-                case 29:
-                    key = findViewById(R.id.E6);
-                    key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
-                    key.setBackgroundColor(getResources().getColor(R.color.light_purple));
-                    break;
-            }
-        }
+            DisplayKeys();
         }
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void downArrowClick (View view) {
+        String test = "| ";
         ArrayList<Integer> keyCombinations = new ArrayList<>();
-        ViewGroup blackKeyLayout = (ViewGroup)findViewById(R.id.constLayout);
         keyCombinations.add(0);
         frame.add(keyCombinations);
+        ViewGroup blackKeyLayout = (ViewGroup)findViewById(R.id.constLayout);
         for (int i = 0; i < blackKeyLayout.getChildCount(); i++){
             View key = blackKeyLayout.getChildAt(i);
             int color = 0;
@@ -764,17 +638,32 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        //frame.add(keyCombinations);
+        //---------------------------------------------------------------------------------------------
+        for (int i = 0; i < frame.size(); i++){
+            for (int j = 0; j < frame.get(i).size(); j++){
+                test = test + Integer.toString(frame.get(i).get(j)) + " ";
+            }
+            test = test + " | ";
+        }
+        Toast.makeText(this, test, Toast.LENGTH_SHORT).show();
+        //---------------------------------------------------------------------------------------------
+        //Toast.makeText(this, "written to element: " + Integer.toString(frameCount-1), Toast.LENGTH_SHORT).show();
         frame.set(frameCount-1, keyCombinations);
         TextView frameCounter = findViewById(R.id.frameCounter);
         if (frameCount > 1) {
             frameCount = frameCount - 1;
         }
         frameCounter.setText(String.valueOf(frameCount));
-        Button key;
         ClearPiano();
+        //Toast.makeText(this, "retrieving from element: " + Integer.toString(frameCount-1), Toast.LENGTH_SHORT).show();
+        DisplayKeys();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void DisplayKeys(){
+        Button key;
         for (int i = 0; i < frame.get(frameCount-1).size(); i++) {
-            switch (frame.get(frameCount-1).get(i)) {
+            switch (frame.get(frameCount - 1).get(i)) {
                 case 1:
                     key = findViewById(R.id.upOne);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
