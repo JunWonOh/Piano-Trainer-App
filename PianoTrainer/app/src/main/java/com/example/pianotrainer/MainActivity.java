@@ -207,8 +207,39 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void upArrowClick (View view) {
         //keyCombination contains combinations of the integer value of keys
+        ArrayList<Integer> keyCombinations = GetElements();
+        frame[frameCount-1] = keyCombinations;
+        //When button is clicked, increment frameCount. Set frameCounter to the new value.
+        TextView frameCounter = findViewById(R.id.frameCounter);
+        frameCount = frameCount + 1;
+        frameCounter.setText(String.valueOf(frameCount));
+        //Turn every key blue instead of purple to "clear the piano"
+        ClearPiano();
+        if (frame[frameCount-1] != null){
+            DisplayKeys();
+        }
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void downArrowClick (View view) {
+        ArrayList<Integer> keyCombinations = GetElements();
+        frame[frameCount-1] = keyCombinations;
+
+        TextView frameCounter = findViewById(R.id.frameCounter);
+        if (frameCount > 1) {
+            frameCount = frameCount - 1;
+        }
+        frameCounter.setText(String.valueOf(frameCount));
+        ClearPiano();
+        if (frame[frameCount-1] != null){
+            DisplayKeys();
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public ArrayList<Integer> GetElements(){
         ArrayList<Integer> keyCombinations = new ArrayList<>();
-        keyCombinations.add(0);
         /**Iterate through every black key to see if any of them are toggled purple.
          * Each black key has its own respective number.
          * If toggled, add that to the keyCombinations arrayList
@@ -412,229 +443,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        frame[frameCount-1] = keyCombinations;
-        //When button is clicked, increment frameCount. Set frameCounter to the new value.
-        TextView frameCounter = findViewById(R.id.frameCounter);
-        frameCount = frameCount + 1;
-        frameCounter.setText(String.valueOf(frameCount));
-        //Turn every key blue instead of purple to "clear the piano"
-        ClearPiano();
-        if (frame[frameCount-1] != null){
-            DisplayKeys();
-        }
-    }
-
-
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void downArrowClick (View view) {
-        ArrayList<Integer> keyCombinations = new ArrayList<>();
-        keyCombinations.add(0);
-        ViewGroup blackKeyLayout = (ViewGroup)findViewById(R.id.constLayout);
-        for (int i = 0; i < blackKeyLayout.getChildCount(); i++){
-            View key = blackKeyLayout.getChildAt(i);
-            int color = 0;
-            ColorDrawable drawable = new ColorDrawable();
-            if (key instanceof Button){
-                Button button = (Button) key;
-                switch(key.getId()){
-                    case R.id.upOne:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(1);
-                        }
-                        break;
-                    case R.id.upTwo:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(2);
-                        }
-                        break;
-                    case R.id.upThree:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(3);
-                        }
-                        break;
-                    case R.id.upFour:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(4);
-                        }
-                        break;
-                    case R.id.upFive:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(5);
-                        }
-                        break;
-                    case R.id.upSix:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(6);
-                        }
-                        break;
-                    case R.id.upSeven:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(7);
-                        }
-                        break;
-                    case R.id.upEight:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(8);
-                        }
-                        break;
-                    case R.id.upNine:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(9);
-                        }
-                        break;
-                    case R.id.upTen:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(10);
-                        }
-                        break;
-                    case R.id.upEleven:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(11);
-                        }
-                        break;
-                    case R.id.upTwelve:
-                        drawable = (ColorDrawable) button.getBackground();
-                        color = drawable.getColor();
-                        if (color == getResources().getColor(R.color.dark_purple)) {
-                            keyCombinations.add(12);
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-        ViewGroup whiteKeyLayout = (ViewGroup)findViewById(R.id.const2Layout);
-        for (int i = 0; i < whiteKeyLayout.getChildCount(); i++){
-            View key = whiteKeyLayout.getChildAt(i);
-            int color = 0;
-            ColorDrawable drawable = new ColorDrawable();
-            if (key instanceof Button) {
-                Button button = (Button) key;
-                drawable = (ColorDrawable) button.getBackground();
-                color = drawable.getColor();
-                switch(key.getId()){
-                    case R.id.middleC4:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(13);
-                        }
-                        break;
-                    case R.id.D4:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(14);
-                        }
-                        break;
-                    case R.id.E4:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(15);
-                        }
-                        break;
-                    case R.id.F4:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(16);
-                        }
-                        break;
-                    case R.id.G4:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(17);
-                        }
-                        break;
-                    case R.id.A4:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(18);
-                        }
-                        break;
-                    case R.id.B4:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(19);
-                        }
-                        break;
-                    case R.id.C5:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(20);
-                        }
-                        break;
-                    case R.id.D5:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(21);
-                        }
-                        break;
-                    case R.id.E5:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(22);
-                        }
-                        break;
-                    case R.id.F5:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(23);
-                        }
-                        break;
-                    case R.id.G5:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(24);
-                        }
-                        break;
-                    case R.id.A5:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(25);
-                        }
-                        break;
-                    case R.id.B5:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(26);
-                        }
-                        break;
-                    case R.id.C6:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(27);
-                        }
-                        break;
-                    case R.id.D6:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(28);
-                        }
-                        break;
-                    case R.id.E6:
-                        if (color == getResources().getColor(R.color.light_purple)) {
-                            keyCombinations.add(29);
-                        }
-                        break;
-                }
-            }
-        }
-        frame[frameCount-1] = keyCombinations;
-
-        TextView frameCounter = findViewById(R.id.frameCounter);
-        if (frameCount > 1) {
-            frameCount = frameCount - 1;
-        }
-        frameCounter.setText(String.valueOf(frameCount));
-        ClearPiano();
-        if (frame[frameCount-1] != null){
-            DisplayKeys();
-        }
+        return keyCombinations;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
