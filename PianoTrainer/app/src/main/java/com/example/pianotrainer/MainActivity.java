@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     private int frameCount = 1;
     private Spinner editSpeed;
-    private ArrayList<ArrayList<Integer>> frame = new ArrayList<ArrayList<Integer>>();
+    //private ArrayList<ArrayList<Integer>> frame = new ArrayList<ArrayList<Integer>>();
+    ArrayList<Integer>[] frame = new ArrayList[4000];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -205,11 +206,9 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void upArrowClick (View view) {
-        String test = "| ";
         //keyCombination contains combinations of the integer value of keys
         ArrayList<Integer> keyCombinations = new ArrayList<>();
         keyCombinations.add(0);
-        frame.add(keyCombinations);
         /**Iterate through every black key to see if any of them are toggled purple.
          * Each black key has its own respective number.
          * If toggled, add that to the keyCombinations arrayList
@@ -413,25 +412,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        //---------------------------------------------------------------------------------------------
-        for (int i = 0; i < frame.size(); i++){
-            for (int j = 0; j < frame.get(i).size(); j++){
-               test = test + Integer.toString(frame.get(i).get(j)) + " ";
-            }
-            test = test + " | ";
-        }
-        Toast.makeText(this, test, Toast.LENGTH_SHORT).show();
-        //---------------------------------------------------------------------------------------------
-        //Toast.makeText(this, "written to element: " + Integer.toString(frameCount-1), Toast.LENGTH_SHORT).show();
-        frame.set(frameCount-1, keyCombinations);
+        frame[frameCount-1] = keyCombinations;
         //When button is clicked, increment frameCount. Set frameCounter to the new value.
         TextView frameCounter = findViewById(R.id.frameCounter);
         frameCount = frameCount + 1;
         frameCounter.setText(String.valueOf(frameCount));
         //Turn every key blue instead of purple to "clear the piano"
         ClearPiano();
-        //Toast.makeText(this, "retrieving from element: " + Integer.toString(frameCount-1), Toast.LENGTH_SHORT).show();
-        if (frame.size() > frameCount){
+        if (frame[frameCount-1] != null){
             DisplayKeys();
         }
     }
@@ -439,10 +427,8 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void downArrowClick (View view) {
-        String test = "| ";
         ArrayList<Integer> keyCombinations = new ArrayList<>();
         keyCombinations.add(0);
-        frame.add(keyCombinations);
         ViewGroup blackKeyLayout = (ViewGroup)findViewById(R.id.constLayout);
         for (int i = 0; i < blackKeyLayout.getChildCount(); i++){
             View key = blackKeyLayout.getChildAt(i);
@@ -638,32 +624,24 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        //---------------------------------------------------------------------------------------------
-        for (int i = 0; i < frame.size(); i++){
-            for (int j = 0; j < frame.get(i).size(); j++){
-                test = test + Integer.toString(frame.get(i).get(j)) + " ";
-            }
-            test = test + " | ";
-        }
-        Toast.makeText(this, test, Toast.LENGTH_SHORT).show();
-        //---------------------------------------------------------------------------------------------
-        //Toast.makeText(this, "written to element: " + Integer.toString(frameCount-1), Toast.LENGTH_SHORT).show();
-        frame.set(frameCount-1, keyCombinations);
+        frame[frameCount-1] = keyCombinations;
+
         TextView frameCounter = findViewById(R.id.frameCounter);
         if (frameCount > 1) {
             frameCount = frameCount - 1;
         }
         frameCounter.setText(String.valueOf(frameCount));
         ClearPiano();
-        //Toast.makeText(this, "retrieving from element: " + Integer.toString(frameCount-1), Toast.LENGTH_SHORT).show();
-        DisplayKeys();
+        if (frame[frameCount-1] != null){
+            DisplayKeys();
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void DisplayKeys(){
         Button key;
-        for (int i = 0; i < frame.get(frameCount-1).size(); i++) {
-            switch (frame.get(frameCount - 1).get(i)) {
+        for (int i = 0; i < frame[frameCount-1].size(); i++) {
+            switch (frame[frameCount - 1].get(i)) {
                 case 1:
                     key = findViewById(R.id.upOne);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
