@@ -435,7 +435,8 @@
             android:text="Play"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/importButton"
-            android:visibility="invisible"/>
+            android:visibility="invisible"
+            android:onClick="PlaySong"/>
 
         <TextView
             android:id="@+id/speedText"
