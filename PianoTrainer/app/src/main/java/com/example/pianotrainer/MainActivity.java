@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.ColorStateList;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private double playBackSpeed = 1;
     private Spinner editSpeed;
     private ArrayList<Integer>[] frame = new ArrayList[4000];
+    private MediaPlayer music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
         final Runnable runnable = new Runnable() {
             public void run() {
                 // need to do tasks on the UI thread
+                //music.stop();
                 ClearPiano();
                 if (frame[m] != null) {
                     PlayKeys(m);
@@ -179,146 +182,204 @@ public class MainActivity extends AppCompatActivity {
                     key = findViewById(R.id.upOne);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.c4sharp);
+                    music.start();
                     break;
                 case 2:
                     key = findViewById(R.id.upTwo);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.d4sharp);
+                    music.start();
                     break;
                 case 3:
                     key = findViewById(R.id.upThree);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.f4sharp);
+                    music.start();
                     break;
                 case 4:
                     key = findViewById(R.id.upFour);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.g4sharp);
+                    music.start();
                     break;
                 case 5:
                     key = findViewById(R.id.upFive);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.a4sharp);
+                    music.start();
                     break;
                 case 6:
                     key = findViewById(R.id.upSix);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.c5sharp);
+                    music.start();
                     break;
                 case 7:
                     key = findViewById(R.id.upSeven);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.d5sharp);
+                    music.start();
                     break;
                 case 8:
                     key = findViewById(R.id.upEight);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.f5sharp);
+                    music.start();
                     break;
                 case 9:
                     key = findViewById(R.id.upNine);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.g5sharp);
+                    music.start();
                     break;
                 case 10:
                     key = findViewById(R.id.upTen);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.a5sharp);
+                    music.start();
                     break;
                 case 11:
                     key = findViewById(R.id.upEleven);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.c6sharp);
+                    music.start();
                     break;
                 case 12:
                     key = findViewById(R.id.upTwelve);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.dark_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.dark_purple));
+                    music = MediaPlayer.create(this, R.raw.d6sharp);
+                    music.start();
                     break;
                 case 13:
                     key = findViewById(R.id.middleC4);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.c4);
+                    music.start();
                     break;
                 case 14:
                     key = findViewById(R.id.D4);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.d4);
+                    music.start();
                     break;
                 case 15:
                     key = findViewById(R.id.E4);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.e4);
+                    music.start();
                     break;
                 case 16:
                     key = findViewById(R.id.F4);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.f4);
+                    music.start();
                     break;
                 case 17:
                     key = findViewById(R.id.G4);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.g4);
+                    music.start();
                     break;
                 case 18:
                     key = findViewById(R.id.A4);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.a4);
+                    music.start();
                     break;
                 case 19:
                     key = findViewById(R.id.B4);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.b4);
+                    music.start();
                     break;
                 case 20:
                     key = findViewById(R.id.C5);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.c5);
+                    music.start();
                     break;
                 case 21:
                     key = findViewById(R.id.D5);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.d5);
+                    music.start();
                     break;
                 case 22:
                     key = findViewById(R.id.E5);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.e5);
+                    music.start();
                     break;
                 case 23:
                     key = findViewById(R.id.F5);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.f5);
+                    music.start();
                     break;
                 case 24:
                     key = findViewById(R.id.G5);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.g5);
+                    music.start();
                     break;
                 case 25:
                     key = findViewById(R.id.A5);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.a5);
+                    music.start();
                     break;
                 case 26:
                     key = findViewById(R.id.B5);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.b5);
+                    music.start();
                     break;
                 case 27:
                     key = findViewById(R.id.C6);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.c6);
+                    music.start();
                     break;
                 case 28:
                     key = findViewById(R.id.D6);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.d6);
+                    music.start();
                     break;
                 case 29:
                     key = findViewById(R.id.E6);
                     key.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.light_purple)));
                     key.setBackgroundColor(getResources().getColor(R.color.light_purple));
+                    music = MediaPlayer.create(this, R.raw.e6);
+                    music.start();
                     break;
             }
         }
