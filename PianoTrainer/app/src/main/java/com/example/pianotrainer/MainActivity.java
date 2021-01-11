@@ -33,9 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
     private int frameCount = 1;
     private int maxFrame = 0;
+    private int m;
+    private double playBackSpeed = 1;
     private Spinner editSpeed;
     private ArrayList<Integer>[] frame = new ArrayList[4000];
-    private int m;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
         editSpeed = findViewById(R.id.editSpeed);
 
         ArrayList<Double> speedOptions = new ArrayList<>();
+        speedOptions.add(1.00);
         speedOptions.add(0.25);
         speedOptions.add(0.50);
         speedOptions.add(0.75);
-        speedOptions.add(1.00);
         speedOptions.add(1.25);
         speedOptions.add(1.50);
         speedOptions.add(1.75);
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 double speed = speedOptions.get(position);
+                playBackSpeed = speed;
             }
 
             @Override
@@ -149,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
     public void PlaySong(View view) throws InterruptedException{
         final Handler handler = new Handler();
         m = 0;
+
         // code used from user Shaishav at https://stackoverflow.com/questions/39024588/android-postdelayed-handler-inside-a-for-loop
         final Runnable runnable = new Runnable() {
             public void run() {
@@ -160,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("CHECKER", "Run test count: " + m);
                 if (m++ < 5) {
                     //this keyword calls run once again.
-                    handler.postDelayed(this, 1000);
+                    handler.postDelayed(this, (long)(1000/playBackSpeed));
                 }
             }
         };
