@@ -7,9 +7,7 @@ import android.content.res.ColorStateList;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
-import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,7 +24,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.drawable.ColorDrawable;
 
-import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 
 
@@ -36,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     private int maxFrame = 0;
     private int m;
     private double playBackSpeed = 1;
-    private Spinner editSpeed;
     private ArrayList<Integer>[] frame = new ArrayList[4000];
     private MediaPlayer music;
 
@@ -44,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editSpeed = findViewById(R.id.editSpeed);
 
         ArrayList<Double> speedOptions = new ArrayList<>();
         speedOptions.add(1.00);
@@ -60,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_dropdown_item,
                 speedOptions
         );
-
+        speedAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Spinner editSpeed = findViewById(R.id.editSpeed);;
         editSpeed.setAdapter(speedAdapter);
         editSpeed.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -153,18 +149,22 @@ public class MainActivity extends AppCompatActivity {
     public void PlaySong(View view) throws InterruptedException{
         final Handler handler = new Handler();
         m = 0;
-
         // code used from user Shaishav at https://stackoverflow.com/questions/39024588/android-postdelayed-handler-inside-a-for-loop
         final Runnable runnable = new Runnable() {
             public void run() {
                 // need to do tasks on the UI thread
-                //music.stop();
+                if (music != null) {
+                    if (music.isPlaying()) {
+                        music.stop();
+                    }
+                    music.reset();
+                }
                 ClearPiano();
                 if (frame[m] != null) {
                     PlayKeys(m);
                 }
                 Log.d("CHECKER", "Run test count: " + m);
-                if (m++ < 5) {
+                if (m++ < maxFrame) {
                     //this keyword calls run once again.
                     handler.postDelayed(this, (long)(1000/playBackSpeed));
                 }
