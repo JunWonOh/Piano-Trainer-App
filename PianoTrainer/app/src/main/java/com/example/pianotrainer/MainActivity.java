@@ -7,6 +7,7 @@ import android.content.res.ColorStateList;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
@@ -24,6 +25,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.drawable.ColorDrawable;
 
+import com.google.gson.Gson;
+
+import java.io.File;
 import java.util.ArrayList;
 
 
@@ -40,37 +44,59 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//
+//        ArrayList<Double> speedOptions = new ArrayList<>();
+//        speedOptions.add(1.00);
+//        speedOptions.add(0.25);
+//        speedOptions.add(0.50);
+//        speedOptions.add(0.75);
+//        speedOptions.add(1.25);
+//        speedOptions.add(1.50);
+//        speedOptions.add(1.75);
+//        speedOptions.add(2.00);
+//        ArrayAdapter<Double> speedAdapter = new ArrayAdapter<>(
+//                this,
+//                android.R.layout.simple_spinner_dropdown_item,
+//                speedOptions
+//        );
+//        speedAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        Spinner editSpeed;
+//        editSpeed = (Spinner) findViewById(R.id.editSpeed);;
+//        editSpeed.setAdapter(speedAdapter);
+//        editSpeed.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                double speed = speedOptions.get(position);
+//                playBackSpeed = speed;
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+    }
 
-        ArrayList<Double> speedOptions = new ArrayList<>();
-        speedOptions.add(1.00);
-        speedOptions.add(0.25);
-        speedOptions.add(0.50);
-        speedOptions.add(0.75);
-        speedOptions.add(1.25);
-        speedOptions.add(1.50);
-        speedOptions.add(1.75);
-        speedOptions.add(2.00);
-        ArrayAdapter<Double> speedAdapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_spinner_dropdown_item,
-                speedOptions
-        );
-        speedAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner editSpeed = findViewById(R.id.editSpeed);;
-        editSpeed.setAdapter(speedAdapter);
-        editSpeed.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                double speed = speedOptions.get(position);
-                playBackSpeed = speed;
-            }
+    public void SaveSong(View view){
+        EditText editTitle = findViewById(R.id.editTitle);
+        Gson json = new Gson();
+        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+        String filePath = dir + "/" + editTitle.getText().toString();
+        File jsonFIle = new File(filePath);
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+    }
 
-            }
-        });
-
+    public void ImportSong(View view){
+//        ImportSong().setOnClickListener(new OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent();
+//                intent.setAction(Intent.ACTION_GET_CONTENT);
+//                intent.setType("file/*");
+//                startActivity(intent);
+//            }
+//        }
     }
 
     public void ConfirmTitle(View view){
@@ -906,4 +932,6 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 }
