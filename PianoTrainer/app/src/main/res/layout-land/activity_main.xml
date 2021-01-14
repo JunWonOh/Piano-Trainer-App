@@ -375,16 +375,7 @@
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <ImageView
-            android:id="@+id/pianoLines"
-            android:layout_width="250dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="15dp"
-            android:src="@mipmap/staff"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleView"
-            android:visibility="invisible"/>
+
 
         <Button
             android:id="@+id/saveButton"
@@ -439,25 +430,79 @@
             android:onClick="PlaySong"/>
 
         <TextView
-            android:id="@+id/speedText"
+            android:id="@+id/speedHint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Speed:"
-            app:layout_constraintStart_toStartOf="@+id/playButton"
-            app:layout_constraintTop_toBottomOf="@+id/playButton"
+            android:layout_marginStart="10dp"
+            android:text="Speed: "
+            app:layout_constraintBottom_toBottomOf="@+id/saveButton"
+            app:layout_constraintStart_toEndOf="@+id/saveButton"
+            app:layout_constraintTop_toTopOf="@+id/saveButton"
             android:visibility="invisible"/>
 
-        <Spinner
-            android:id="@+id/editSpeed"
-            android:layout_width="80dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="12dp"
-            android:background="@color/light_blue"
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/speedHint"
+            app:layout_constraintStart_toEndOf="@+id/speedHint"
+            app:layout_constraintTop_toTopOf="@+id/speedHint"
+            android:id="@+id/speedSelection"
             android:visibility="invisible"
-            app:layout_constraintStart_toEndOf="@+id/speedText"
-            app:layout_constraintTop_toBottomOf="@+id/playButton" />
+            android:checkedButton="@id/speedOption3">
+
+            <RadioButton
+                android:id="@+id/speedOption1"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="Very Slow"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/speedHint"
+                app:layout_constraintStart_toEndOf="@+id/speedHint"
+                app:layout_constraintTop_toTopOf="@+id/speedHint" />
+
+            <RadioButton
+                android:id="@+id/speedOption2"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:text="Slow"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/speedOption1"
+                app:layout_constraintStart_toEndOf="@+id/speedOption1"
+                app:layout_constraintTop_toTopOf="@+id/speedOption1" />
+
+            <RadioButton
+                android:id="@+id/speedOption3"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:text="Normal"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/speedOption2"
+                app:layout_constraintStart_toEndOf="@+id/speedOption2"
+                app:layout_constraintTop_toTopOf="@+id/speedOption2" />
+
+            <RadioButton
+                android:id="@+id/speedOption4"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:text="Fast"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/speedOption3"
+                app:layout_constraintStart_toEndOf="@+id/speedOption3"
+                app:layout_constraintTop_toTopOf="@+id/speedOption3" />
+
+            <RadioButton
+                android:id="@+id/speedOption5"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Very Fast"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/speedOption4"
+                app:layout_constraintStart_toEndOf="@+id/speedOption4"
+                app:layout_constraintTop_toTopOf="@+id/speedOption4" />
+        </RadioGroup>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

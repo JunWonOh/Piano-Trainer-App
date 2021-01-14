@@ -375,16 +375,6 @@
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <ImageView
-            android:id="@+id/pianoLines"
-            android:layout_width="250dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="15dp"
-            android:src="@mipmap/staff"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleView"
-            android:visibility="invisible"/>
 
         <Button
             android:id="@+id/saveButton"
@@ -440,26 +430,12 @@
             android:visibility="invisible"
             android:onClick="PlaySong"/>
 
-        <TextView
-            android:id="@+id/speedText"
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Speed:"
-            app:layout_constraintStart_toStartOf="@+id/playButton"
-            app:layout_constraintTop_toBottomOf="@+id/playButton"
-            android:visibility="invisible"/>
+            tools:layout_editor_absoluteX="78dp"
+            tools:layout_editor_absoluteY="210dp" />
 
-        <Spinner
-            android:id="@+id/editSpeed"
-            android:layout_width="80dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="12dp"
-            android:background="@color/light_blue"
-            android:visibility="invisible"
-            app:layout_constraintStart_toEndOf="@+id/speedText"
-            app:layout_constraintTop_toBottomOf="@+id/playButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,38 +45,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//
-//        ArrayList<Double> speedOptions = new ArrayList<>();
-//        speedOptions.add(1.00);
-//        speedOptions.add(0.25);
-//        speedOptions.add(0.50);
-//        speedOptions.add(0.75);
-//        speedOptions.add(1.25);
-//        speedOptions.add(1.50);
-//        speedOptions.add(1.75);
-//        speedOptions.add(2.00);
-//        ArrayAdapter<Double> speedAdapter = new ArrayAdapter<>(
-//                this,
-//                android.R.layout.simple_spinner_dropdown_item,
-//                speedOptions
-//        );
-//        speedAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        Spinner editSpeed;
-//        editSpeed = (Spinner) findViewById(R.id.editSpeed);;
-//        editSpeed.setAdapter(speedAdapter);
-//        editSpeed.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                double speed = speedOptions.get(position);
-//                playBackSpeed = speed;
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
     }
+
+
 
     public void SaveSong(View view){
         EditText editTitle = findViewById(R.id.editTitle);
@@ -83,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         String filePath = dir + "/" + editTitle.getText().toString();
         File jsonFIle = new File(filePath);
-
     }
 
     public void ImportSong(View view){
@@ -868,46 +839,54 @@ public class MainActivity extends AppCompatActivity {
 
     public void InPlayMode () {
         Toast.makeText(this, "Entered Play Mode", Toast.LENGTH_SHORT).show();
-        ImageView pianoLines = findViewById(R.id.pianoLines);
+        //ImageView pianoLines = findViewById(R.id.pianoLines);
         TextView titleView = findViewById(R.id.titleView);
         TextView editTitle = findViewById(R.id.editTitle);
-        Spinner editSpeed = (Spinner) findViewById(R.id.editSpeed);
-        TextView speedText = findViewById(R.id.speedText);
+        //Spinner editSpeed = (Spinner) findViewById(R.id.editSpeed);
+       // TextView speedText = findViewById(R.id.speedText);
         Button saveButton = findViewById(R.id.saveButton);
         Button confirm_title_button = findViewById(R.id.confirm_title_button);
         Button importButton = findViewById(R.id.importButton);
         Button playButton = findViewById(R.id.playButton);
-        pianoLines.setVisibility(View.VISIBLE);
+        RadioGroup speedSelection = findViewById(R.id.speedSelection);
+        TextView speedHint = findViewById(R.id.speedHint);
+       // pianoLines.setVisibility(View.VISIBLE);
         titleView.setVisibility(View.VISIBLE);
         editTitle.setVisibility(View.INVISIBLE);
-        editSpeed.setVisibility(View.VISIBLE);
-        speedText.setVisibility(View.VISIBLE);
+       // editSpeed.setVisibility(View.VISIBLE);
+       // speedText.setVisibility(View.VISIBLE);
         saveButton.setVisibility(View.INVISIBLE);
         confirm_title_button.setVisibility(View.INVISIBLE);
         importButton.setVisibility(View.VISIBLE);
         playButton.setVisibility(View.VISIBLE);
+        speedSelection.setVisibility(View.VISIBLE);
+        speedHint.setVisibility(View.VISIBLE);
     }
 
     public void InEditMode () {
         Toast.makeText(this, "Entered Edit Mode", Toast.LENGTH_SHORT).show();
-        ImageView pianoLines = findViewById(R.id.pianoLines);
+      //  ImageView pianoLines = findViewById(R.id.pianoLines);
         TextView titleView = findViewById(R.id.titleView);
         TextView editTitle = findViewById(R.id.editTitle);
-        Spinner editSpeed = (Spinner) findViewById(R.id.editSpeed);
-        TextView speedText = findViewById(R.id.speedText);
+     //   Spinner editSpeed = (Spinner) findViewById(R.id.editSpeed);
+    //    TextView speedText = findViewById(R.id.speedText);
         Button saveButton = findViewById(R.id.saveButton);
         Button confirm_title_button = findViewById(R.id.confirm_title_button);
         Button importButton = findViewById(R.id.importButton);
         Button playButton = findViewById(R.id.playButton);
-        pianoLines.setVisibility(View.INVISIBLE);
+        RadioGroup speedSelection = findViewById(R.id.speedSelection);
+        TextView speedHint = findViewById(R.id.speedHint);
+  //      pianoLines.setVisibility(View.INVISIBLE);
         titleView.setVisibility(View.INVISIBLE);
         editTitle.setVisibility(View.VISIBLE);
-        editSpeed.setVisibility(View.INVISIBLE);
-        speedText.setVisibility(View.INVISIBLE);
+  //      editSpeed.setVisibility(View.INVISIBLE);
+   //     speedText.setVisibility(View.INVISIBLE);
         saveButton.setVisibility(View.VISIBLE);
         confirm_title_button.setVisibility(View.VISIBLE);
         importButton.setVisibility(View.INVISIBLE);
         playButton.setVisibility(View.INVISIBLE);
+        speedSelection.setVisibility(View.INVISIBLE);
+        speedHint.setVisibility(View.INVISIBLE);
     }
 
     //adding this will enable the changes made in main_menu.xml to be visible
